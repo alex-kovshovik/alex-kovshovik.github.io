@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "Amazon's EKS vs Digital Ocean's Kubernetes"
+date:   2020-01-21 21:00:00 -0700
+categories:
+---
+
+This website and a few others run on a Kubernetes cluster managed by Digital Ocean.
+
+<a href="https://imgflip.com/i/3muvfv" title="k8s is NOT an overkill for this website, change my mind"><img src="https://i.imgflip.com/3muvfv.jpg" title="made at imgflip.com"/></a>
+
+## Digital Ocean's Managed Kubernetes
+
+Until Digital Ocean's managed Kubernetes, having your own Kubernetes cluster was an overkill for small apps: it was hard to configure it right, it was too expensive. Some would argue that it is still the case.
+
+There are other popular container orchestrators (Rancher), but Kubernetes eventually won the popular vote and became the de-facto container orchestrator. Rancher replaced it's home-grown Cattle with Kubernetes in it's version 2.x. They made the decision quite early and I believe this was the right choice.
+
+To create and configure a Kubernetes cluster, all you need are a few clicks on Digital Ocean's online console.
+
+**Steps:**
+
+1. Select "Create Cluster".
+1. Choose version of Kubernetes.
+1. Choose datacenter region.
+1. Choose node type and number of nodes you need.
+1. Give the cluster a name.
+
+A few minutes later the cluster is up and running. Just download the config file and you're ready to run `kubectl` commands.
+
+This is just too easy!
+
+## Amazon EKS
+
+Amazon EKS is entirely a different beast and I believe Amazon made it so complex for a good reason: their solution needs to work for "enterprise customers", with specific network, security and compliance requirements. Amazon's solution also works great with its other services: VPC, ELB, Security Groups.
+
+On December 31 of 2019 I completed the migration of [my employer's](https://decisely.com/) production workload from Rancher 1.6.x to Amazon EKS, **with about 2 seconds of downtime.** It took way longer than I anticipated, but along the way I learned a lot about Amazon VPCs, availability zones, subnets, routing tables, VPC peering, NAT gateways, Internet gateways, CIDR IP address blocks, Elastic IPs, network ACLs and IAM policies. This gave me better understanding and appreciation of AWS and its design philosophy.
+
+**Steps:**
+
+1. Download and install command line tools:
+   - AWS CLI
+   - AWS IAM Authenticator
+   - [eksctl](https://eksctl.io/)
+1. Create new VPC with 2 availability zones, 2 public subnets (one per zone) and 2 private subnets.
+   - Define IP address ranges than you like or use defaults.
+1. Create new cluster using `eksctl` - this is by far the easiest way I found. See command example below.
+   - The first nodegroup is created together with the cluster.
+   - The nodegroup uses AWS CloudFormation to provision an auto-scaling group.
+1. [Install ALB Ingress Controller in your cluster](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html) to be able to create load balancers to expose your web app to outside world.
+
+**eksctl command:**
+
+```sh
+eksctl create cluster \
+--name my-cluster \
+--region us-west-1 \
+--nodegroup-name my-nodes \
+--node-type t3.medium \
+--nodes 3 \
+--nodes-min 1 \
+--nodes-max 4 \
+--node-ami auto \
+--node-private-networking \
+--node-volume-size 24 \
+--node-security-groups security-group-id \
+--ssh-public-key my-ssh-private-key-name \
+--vpc-private-subnets subnet-id-1,subnet-id-2 \
+--vpc-public-subnets subnet-id-3,subnet-id-4
+```
+
+There are fewer steps to configure a Kubernetes cluster on Amazon EKS, however it was a long journey for me to figure them out, because there are MANY ways to configure a Kubernetes cluster on AWS. There are a ton of tutorials and best practices articles, so many decisions that I had to make along the way.
+
+## Conclusion
+
+DigitalOcean has great defaults. It is cheaper and much easier :)
+
+The complexity of deploying workloads is the same on both: Amazon EKS and Digital Ocean Kubernetes.
