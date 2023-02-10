@@ -11,4 +11,4 @@ This is a short humorous video about the git rebase: a practical example of how 
 
 **Please watch:**
 
-<iframe width="680" height="415" src="http://www.youtube.com/embed/OXtdxHTh2oY" frameborder="0" allowfullscreen></iframe>
+<iframe width="680" height="415" src="https://www.youtube.com/embed/OXtdxHTh2oY" frameborder="0" allowfullscreen></iframe>
