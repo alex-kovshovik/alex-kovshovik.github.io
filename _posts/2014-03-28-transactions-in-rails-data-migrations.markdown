@@ -7,7 +7,7 @@ categories:
 
 Just found a useful idea in my friend’s code: **use transactions in database migrations**. This can save you a lot of trouble with partially updated data.
 
-![Person givin a credit card to a computer](https://s3.amazonaws.com/shovik-com/uploads/post_images/2/internet-1593384_1280.jpg?v=63658144892)
+![Person giving a credit card to a computer](https://s3.amazonaws.com/shovik-com/uploads/post_images/2/internet-1593384_1280.jpg?v=63658144892)
 
 I have 2 major types of DB migrations in my Rails applications:
 
