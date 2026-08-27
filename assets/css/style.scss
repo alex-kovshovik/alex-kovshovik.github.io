@@ -8,7 +8,7 @@
   --mist: #9aa8b0;
   --centerline: #d4a45a;
   --rule: rgba(231, 236, 239, 0.12);
-  --display: "Syne", sans-serif;
+  --display: "Figtree", system-ui, sans-serif;
   --body: "Figtree", system-ui, sans-serif;
 }
 
@@ -91,9 +91,9 @@ a:focus-visible {
 
 .wordmark {
   font-family: var(--display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.15rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.02em;
   text-transform: lowercase;
   text-decoration: none;
 }
@@ -168,10 +168,10 @@ a:focus-visible {
 .hero h1 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(2.6rem, 8vw, 6.2rem);
-  letter-spacing: -0.045em;
-  line-height: 0.92;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 4.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .hero-lede {
@@ -219,7 +219,8 @@ a:focus-visible {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .photo-grid {
@@ -313,15 +314,17 @@ a:focus-visible {
 .prose h1 {
   margin: 0;
   font-family: var(--display);
+  font-weight: 700;
   font-size: clamp(2rem, 5vw, 3.2rem);
-  letter-spacing: -0.04em;
-  line-height: 1.05;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
 }
 
 .prose h2,
 .prose h3 {
   font-family: var(--display);
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .prose img {
