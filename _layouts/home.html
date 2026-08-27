@@ -16,6 +16,7 @@ layout: default
     <h1>Alex Kovshovik</h1>
     <p class="hero-lede">{{ site.description }}</p>
     <p class="hero-actions">
+      <a class="text-link" href="{{ "/blog/" | relative_url }}">Blog</a>
       <a class="text-link" href="{{ site.pexels_url }}" rel="me noopener" target="_blank">Pexels photographs</a>
       <a class="text-link" href="{{ site.x_url }}" rel="me noopener" target="_blank">X / @{{ site.twitter_username }}</a>
     </p>
@@ -45,25 +46,9 @@ layout: default
       </li>
     {%- endfor -%}
   </ul>
-</section>
 
-<section class="band writing" aria-labelledby="writing-heading">
-  {{ content }}
-  <div class="band-head">
-    <div>
-      <p class="eyebrow">Writing</p>
-      <h2 id="writing-heading">{{ page.list_title | default: "Posts" }}</h2>
-    </div>
-  </div>
-
-  {%- if site.posts.size > 0 -%}
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-        <li>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
+  <p class="blog-cue">
+    <a class="text-link" href="{{ "/blog/" | relative_url }}">Blog</a>
+    for notes on git, Rails, and deploys.
+  </p>
 </section>

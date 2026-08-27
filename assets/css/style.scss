@@ -81,6 +81,7 @@ a:focus-visible {
 
 .layout-page .site-header,
 .layout-post .site-header,
+.layout-blog .site-header,
 .layout-default .site-header {
   position: sticky;
   background: rgba(16, 22, 28, 0.88);
@@ -213,6 +214,7 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
+.band h1,
 .band h2 {
   margin: 0;
   font-family: var(--display);
@@ -261,8 +263,14 @@ a:focus-visible {
   text-shadow: 0 1px 8px rgba(16, 22, 28, 0.85);
 }
 
+.photos,
 .writing {
   padding-bottom: 4rem;
+}
+
+.blog-cue {
+  margin: 1.6rem 0 0;
+  color: var(--mist);
 }
 
 .post-list {
