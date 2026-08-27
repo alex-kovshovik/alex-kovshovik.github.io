@@ -2,15 +2,19 @@
 layout: default
 ---
 
-<section class="hero">
-  <img
-    class="hero-image"
-    src="{{ "/assets/photos/oregon-coast.jpg" | relative_url }}"
-    alt="Oregon coastal highway above crashing waves, cliffs, and sea mist"
-    width="2400"
-    height="1350"
-    fetchpriority="high"
-  >
+<section class="hero" data-hero>
+  <div class="hero-stage">
+    <img
+      class="hero-image"
+      src="{{ "/assets/photos/utah-ridge.jpg" | relative_url }}"
+      alt="Sunburst over the Great Salt Lake from a rocky Utah ridge"
+      width="2400"
+      height="1391"
+      fetchpriority="high"
+    >
+    <div class="hero-flare" data-hero-flare aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+  </div>
   <div class="hero-copy">
     <p class="hero-kicker">From the road</p>
     <h1>Alex Kovshovik</h1>
