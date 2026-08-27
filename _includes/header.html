@@ -1,0 +1,12 @@
+<header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="wordmark" href="{{ "/" | relative_url }}">shovik</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="{{ "/about/" | relative_url }}">About</a>
+    <a href="{{ site.pexels_url }}" rel="me noopener" target="_blank">Pexels</a>
+    <a href="{{ site.x_url }}" rel="me noopener" target="_blank">X</a>
+    {% if site.github_username %}
+      <a class="nav-github" href="https://github.com/{{ site.github_username }}" rel="me noopener" target="_blank">GitHub</a>
+    {% endif %}
+  </nav>
+</header>

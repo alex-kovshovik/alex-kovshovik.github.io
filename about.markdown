@@ -6,4 +6,10 @@ permalink: /about/
 
 This is Alex Kovshovik's personal website and blog.
 
-![Alex Kovshovik](https://shovik-com.s3.amazonaws.com/shovik-com-images/alex-kovshovik-2022-11-24.jpg)
+![The Kovshovik family at a campsite dinner in front of a Winnebago]({{ "/assets/photos/family.jpg" | relative_url }})
+
+Software developer, creator, father of 5.
+
+<img class="portrait" src="https://shovik-com.s3.amazonaws.com/shovik-com-images/alex-kovshovik-2022-11-24.jpg" alt="Alex Kovshovik">
+
+Photographs live on [Pexels](https://www.pexels.com/@alex-kovshovik/highlights/). Notes and other posts live here. I write on X as [@ashovik](https://x.com/ashovik).

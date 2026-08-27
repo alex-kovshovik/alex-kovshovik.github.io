@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <p class="footer-name">Alex Kovshovik</p>
+  <p class="footer-links">
+    <a href="{{ site.pexels_url }}" rel="me noopener" target="_blank">Pexels</a>
+    <a href="{{ site.x_url }}" rel="me noopener" target="_blank">X</a>
+    {%- if site.github_username -%}
+      <a href="https://github.com/{{ site.github_username }}" rel="me noopener" target="_blank">GitHub</a>
+    {%- endif -%}
+    <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+  </p>
+</footer>
