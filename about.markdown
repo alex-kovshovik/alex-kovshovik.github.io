@@ -10,6 +10,6 @@ This is Alex Kovshovik's personal website and blog.
 
 Software developer, creator, father of 5.
 
-<img class="portrait" src="https://shovik-com.s3.amazonaws.com/shovik-com-images/alex-kovshovik-2022-11-24.jpg" alt="Alex Kovshovik">
+<img class="portrait" src="https://shovik-com.s3.us-east-1.amazonaws.com/shovik-com-images/AlexK.jpg" alt="Alex Kovshovik">
 
 Photographs live on [Pexels](https://www.pexels.com/@alex-kovshovik/highlights/). Notes and other posts live here. I write on X as [@ashovik](https://x.com/ashovik).
